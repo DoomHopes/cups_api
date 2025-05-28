@@ -1,4 +1,6 @@
-import 'package:sqflite/sqflite.dart';
+// import 'package:sqflite/sqflite.dart';
+
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 /// Сервис для работы с юзером
 class UserService {
@@ -16,7 +18,7 @@ class UserService {
   /// Если пользователь найден, возвращает Map с его данными, иначе null
   Future<Map<String, dynamic>?> getUserById(Database db, int id) async {
     final result = await db.query(
-      'users',
+      'user',
       where: 'id = ?',
       whereArgs: [id],
     );

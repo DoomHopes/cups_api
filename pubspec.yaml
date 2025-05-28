@@ -11,8 +11,7 @@ dependencies:
   crypto: ^3.0.6
   dart_frog: ^1.1.0
   path: ^1.9.1
-  riverpod: ^2.6.1
-  sqflite: ^2.3.2
+  sqflite_common_ffi: ^2.3.2+1
 
 dev_dependencies:
   mocktail: ^1.0.3

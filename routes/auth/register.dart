@@ -49,11 +49,11 @@ Future<Response> onRequest(RequestContext context) async {
   final email = data['email'] as String;
   final password = data['password'] as String;
 
-  if (checkingForTheVoid(email, password)) {
+  if (checkingForTheVoid(email, password) == false) {
     return Response.json(body: {'message': 'email and password are required'});
   }
 
-  if (passwordChecking(password)) {
+  if (passwordChecking(password) == false) {
     return Response.json(body: {'message': 'The password is very short'});
   }
 
@@ -66,6 +66,6 @@ Future<Response> onRequest(RequestContext context) async {
 
     return Response.json(body: {'message': 'User ($id) registered successfully'});
   } catch (e) {
-    return Response.json(body: {'message': e});
+    return Response.json(body: {'message': e.toString()});
   }
 }
