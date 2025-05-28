@@ -4,29 +4,10 @@ import 'package:dart_frog/dart_frog.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:test/test.dart';
 
+import '../../routes/auth/register.dart';
 import '../../routes/index.dart' as route;
 
 class _MockRequestContext extends Mock implements RequestContext {}
-
-bool emailValidate(String email) {
-  return RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(email);
-}
-
-bool checkingForTheVoid(String email, String password) {
-  if (email.isEmpty || password.isEmpty) {
-    return false;
-  }
-
-  return true;
-}
-
-bool passwordChecking(String password) {
-  if (password.length < 8) {
-    return false;
-  }
-
-  return true;
-}
 
 void main() {
   group('GET /', () {
